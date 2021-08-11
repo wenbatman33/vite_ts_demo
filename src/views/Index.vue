@@ -25,6 +25,8 @@
 			Demo_9
 		.col-span-1.bg-yellow-200.rounded-xl.border
 			Demo_10
+		.col-span-1.bg-yellow-200.rounded-xl.border
+			Demo_11
 
 </template>
 
@@ -40,6 +42,7 @@ import Demo_7 from '@/components/Demo/Demo_7.vue';
 import Demo_8 from '@/components/Demo/Demo_8.vue';
 import Demo_9 from '@/components/Demo/Demo_9.vue';
 import Demo_10 from '@/components/Demo/Demo_10.vue';
+import Demo_11 from '@/components/Demo/Demo_11.vue';
 import logo from '@/assets/logo.png';
 
 defineProps({
