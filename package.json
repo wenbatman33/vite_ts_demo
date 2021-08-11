@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"license": "MIT",
 	"scripts": {
-		"serve": "vite",
-		"serve:stage": "vite --mode stage",
-		"serve:prod": "vite --mode production",
+		"dev": "vite",
+		"dev:stage": "vite --mode stage",
+		"dev:prod": "vite --mode production",
 		"build:dev": "cross-env vite build --mode dev",
 		"build:stage": "cross-env vite build --mode stage",
 		"build:prod": "cross-env vite build --mode production",
