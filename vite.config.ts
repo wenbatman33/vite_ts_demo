@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv } from 'vite'
 import { minifyHtml, injectHtml } from 'vite-plugin-html'
 import dayjs from 'dayjs'
-// import { viteMockServe } from 'vite-plugin-mock'
 
 export default ({ mode }) => {
 	console.log(mode)
@@ -14,8 +13,6 @@ export default ({ mode }) => {
 		},
 		plugins: [
 			vue(),
-			// viteMockServe 不好用
-			// viteMockServe({ supportTs: true}),
 			minifyHtml(),
 			injectHtml({
 				injectData: {
