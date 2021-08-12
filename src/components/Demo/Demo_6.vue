@@ -1,33 +1,20 @@
 <template lang="pug">
 .p-4
-	h2 Mock 用法
-	p {{state.data}}
-
+	h2 {{userStore.name}}
+	h2 {{userStore.id}}
+	h2 {{userStore.socre}}
+	a-button(type="dashed" @click="increment") shoot ball
 </template>
 
 <script setup lang="ts">
-import Mock from 'mockjs';
+import { useUserStore } from '@/store/userStore';
+import { onMounted, onUnmounted, computed } from 'vue';
 
-import { onMounted, onUnmounted, reactive } from 'vue';
-
-const state = reactive({
-	data: null as unknown,
-});
-defineProps({
-	des: String,
-});
+const userStore = useUserStore();
+const increment = () => userStore.increment();
 onUnmounted(() => {});
 onMounted(() => {
-	const data = Mock.mock({
-		'list|1-10': [
-			{
-				// 属性 id 是一个自增数，起始值为 1，每次增 1
-				'id|+1': 1,
-				'string|1-10': '★',
-			},
-		],
-	});
-	state.data = data;
+	// 输出结果
 });
 </script>
 
