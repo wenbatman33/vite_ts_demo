@@ -31,24 +31,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
-import Demo_1 from '@/components/Demo/Demo_1.vue';
-import Demo_2 from '@/components/Demo/Demo_2.vue';
-import Demo_3 from '@/components/Demo/Demo_3.vue';
-import Demo_4 from '@/components/Demo/Demo_4.vue';
-import Demo_5 from '@/components/Demo/Demo_5.vue';
-import Demo_6 from '@/components/Demo/Demo_6.vue';
-import Demo_7 from '@/components/Demo/Demo_7.vue';
-import Demo_8 from '@/components/Demo/Demo_8.vue';
-import Demo_9 from '@/components/Demo/Demo_9.vue';
-import Demo_10 from '@/components/Demo/Demo_10.vue';
-import Demo_11 from '@/components/Demo/Demo_11.vue';
-import logo from '@/assets/logo.png';
+  import { ref, defineProps } from 'vue';
+  import Demo_1 from '@/components/Demo/Demo_1.vue';
+  import Demo_2 from '@/components/Demo/Demo_2.vue';
+  import Demo_3 from '@/components/Demo/Demo_3.vue';
+  import Demo_4 from '@/components/Demo/Demo_4.vue';
+  import Demo_5 from '@/components/Demo/Demo_5.vue';
+  import Demo_6 from '@/components/Demo/Demo_6.vue';
+  import Demo_7 from '@/components/Demo/Demo_7.vue';
+  import Demo_8 from '@/components/Demo/Demo_8.vue';
+  import Demo_9 from '@/components/Demo/Demo_9.vue';
+  import Demo_10 from '@/components/Demo/Demo_10.vue';
+  import Demo_11 from '@/components/Demo/Demo_11.vue';
+  import logo from '@/assets/logo.png';
 
-defineProps({
-	msg: String,
-});
-const count = ref(0);
+  defineProps({
+    msg: String,
+  });
+  const count = ref(0);
 </script>
 
 <style scoped lang="scss"></style>
