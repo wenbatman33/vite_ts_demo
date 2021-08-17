@@ -5,11 +5,9 @@ import { minifyHtml, injectHtml } from 'vite-plugin-html'
 import dayjs from 'dayjs'
 
 export default ({ mode }) => {
-	console.log(mode)
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 	return defineConfig({
 		server: {
-			port: 8888,
 		},
 		plugins: [
 			vue(),

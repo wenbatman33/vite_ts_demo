@@ -5,7 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import { mockTest } from '@/api';
+import axios from 'axios';
+import { login } from '@/api';
 import { ref, onMounted, onUnmounted } from 'vue';
 
 let env: any = import.meta.env;
@@ -13,10 +14,12 @@ const respone: any = ref('');
 onUnmounted(() => {});
 onMounted(() => {
 	// 输出结果
-	// mockTest({}).then((res: any) => {
-	// 	console.log(res);
-	// 	respone.value = res.data.list;
-	// });
+	login({
+		account: 'admin00',
+		password: '1234qwer',
+	}).then((res: any) => {
+		console.log(res);
+	});
 });
 </script>
 
