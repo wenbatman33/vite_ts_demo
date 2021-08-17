@@ -8,6 +8,9 @@ export default ({ mode }) => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 	return defineConfig({
 		server: {
+			port: 8888,
+			open: true,
+			proxy: {}
 		},
 		plugins: [
 			vue(),
