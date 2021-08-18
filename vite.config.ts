@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv } from 'vite'
 import { minifyHtml, injectHtml } from 'vite-plugin-html'
 import dayjs from 'dayjs'
+import pkg from './package.json';
 
 export default ({ mode }) => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
@@ -18,7 +19,7 @@ export default ({ mode }) => {
 			injectHtml({
 				injectData: {
 					title: process.env.VITE_TITLE,
-					ver: process.env.VITE_VER,
+					ver: pkg.version,
 					buildTime: dayjs().format('YYYY-MM-DD HH:mm:ss')
 				},
 			}),
