@@ -1,23 +1,21 @@
 <template lang="pug">
 .p-4
-	h2 axios
-	p {{respone}}
+	h5 utils / commaFormat
+	p {{price}}
+	p {{priceFormat}}
+	p {{priceDecimalFormat}}
 </template>
 
 <script setup lang="ts">
-import { mockTest } from '@/api';
-import { ref, onMounted, onUnmounted } from 'vue';
+  import { commaFormat, commaDecimalFormat } from '@/utils';
+  import { ref, onMounted, onUnmounted } from 'vue';
 
-let env: any = import.meta.env;
-const respone: any = ref('');
-onUnmounted(() => {});
-onMounted(() => {
-	// 输出结果
-	// mockTest({}).then((res: any) => {
-	// 	console.log(res);
-	// 	respone.value = res.data.list;
-	// });
-});
+  const price = ref(9999.8374);
+  const priceFormat = commaFormat(price.value);
+  const priceDecimalFormat = commaDecimalFormat(price.value);
+
+  onUnmounted(() => {});
+  onMounted(() => {});
 </script>
 
 <style></style>

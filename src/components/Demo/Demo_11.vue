@@ -1,25 +1,11 @@
 <template lang="pug">
 .p-4
-	h2 axios
-	p {{respone}}
+	h5 image error event
+	img.w-20.h-20(src='http://localhost:8888/xxx.png'  @error='errorImg')
 </template>
 
 <script setup lang="ts">
-  import { login } from '@/api';
-  import { ref, onMounted, onUnmounted } from 'vue';
-
-  const respone = ref<T>('');
-  onUnmounted(() => {});
-  onMounted(() => {
-    // 输出结果
-    login({
-      account: 'admin00',
-      password: '1234qwer',
-    }).then((res: unknown) => {
-      console.log(res);
-      respone.value = res;
-    });
-  });
+  import { errorImg } from '@/utils';
 </script>
 
 <style></style>

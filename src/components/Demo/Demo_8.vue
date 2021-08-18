@@ -1,20 +1,14 @@
 <template lang="pug">
 .p-4
-	h5 {{apiUrl}}
-
+	h5 env 使用方法
+	p apiUrl: {{apiUrl}}
+	p appVer: {{appVer}}
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onUnmounted } from 'vue';
-  const env = import.meta.env;
-
-  const apiUrl = ref<string>('');
-
-  onUnmounted(() => {});
-  onMounted(() => {
-    // 输出结果
-    apiUrl.value = env.VITE_API_URL;
-  });
+  let env = import.meta.env;
+  const apiUrl = env.VITE_API_URL;
+  const appVer = env.VITE_VER;
 </script>
 
 <style></style>

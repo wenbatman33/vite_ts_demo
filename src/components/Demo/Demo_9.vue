@@ -1,24 +1,38 @@
 <template lang="pug">
 .p-4
-	h5 apiUrl: {{apiUrl}}
-	p appVer: {{appVer}}
-	Layout.w-10.h-10.bg-red-500
+	h5 axios respone
+	p.truncate {{list}}
 </template>
 
 <script setup lang="ts">
-  import { Layout } from 'ant-design-vue';
-  import { ref, onMounted, onUnmounted } from 'vue';
-  let env = import.meta.env;
+  import { hotLive } from '@/api';
+  import { reactive, toRef, onMounted } from 'vue';
 
-  const apiUrl = ref<string>('');
-  const appVer = ref<string>('');
-  onUnmounted(() => {});
-  onMounted(() => {
-    // 输出结果
-    apiUrl.value = env.VITE_API_URL;
-    appVer.value = env.VITE_VER;
+  interface Ilive {
+    avatar: string;
+    city: string;
+    is_follow: boolean;
+    islive: number;
+    level_anchor_info: unknown;
+    liveclassid: number;
+    nums: string;
+    signature: string;
+    stream: string;
+    thumb: string;
+    title: string;
+    type: number;
+    uid: number;
+  }
+  const state = reactive({
+    list: [] as Ilive[],
   });
-  Layout;
+
+  onMounted(() => {
+    hotLive().then((res: any) => {
+      state.list = res?.data?.data?.list;
+    });
+  });
+  const list = toRef(state, 'list');
 </script>
 
 <style></style>
