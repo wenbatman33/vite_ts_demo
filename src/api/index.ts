@@ -1,3 +1,4 @@
-import axios from '@/axiosConfig';
+import API_REQUEST from '@/utils/http';
 
-export const hotLive = (payload?:unknown) => axios.get('/live/hotlive', { params: payload });
+// payload => type 尚未定義
+export const hotLive = (payload?:unknown) => API_REQUEST.get('/live/hotlive', { params: payload });

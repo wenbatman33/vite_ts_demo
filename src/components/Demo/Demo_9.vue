@@ -26,11 +26,13 @@
   const state = reactive({
     list: [] as Ilive[],
   });
-
+  const init = async () => {
+    const res = await hotLive();
+    console.log(res?.data?.data?.list);
+    state.list = res?.data?.data?.list;
+  };
   onMounted(() => {
-    hotLive().then((res: any) => {
-      state.list = res?.data?.data?.list;
-    });
+    init();
   });
   const list = toRef(state, 'list');
 </script>

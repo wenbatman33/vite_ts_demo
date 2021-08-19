@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router";
+import { clearPending } from "@/utils/http";
 
 import Index from '@/views/Index.vue'
 import GridDemo from '@/views/GridDemo.vue'
@@ -13,5 +14,9 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+router.beforeEach((to, from, next) => {
+	clearPending()
+	next()
+})
 
 export default router;
